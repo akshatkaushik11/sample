@@ -1,0 +1,72 @@
+{% extends '../base.html' %}
+{% load staticfiles %}
+{% load urlify %}
+
+{% block style %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/write/write.css' %}">
+	{{ form.media }}
+{% endblock %}
+
+<!-- For edit feature -->
+{% block edit%}
+	{% if request.user == instance.user %}
+<!-- 	<div class="row">
+		<div class="col-md-4 col-md-offset-8">
+			<p><a href="{{instance.get_absolute_url}}edit">Edit</a></p>
+		</div>
+	</div> -->
+	<li role="presentation" {% if request.path == write%} class="active" {% endif %}><a href="{{instance.get_absolute_url}}edit}}">Edit</a></li>
+	<li class="clearfix" style="width: 10px;"></li>
+	{% endif %}
+{% endblock %}
+
+
+{% block content %}
+<div class="row">
+
+	<div class="col-md-8 col-md-offset-2">
+		<h1>{{ instance.title }}</h1>
+		{% if instance.draft %}
+				<h4>Draft</h4>
+		{% endif %}
+		{% if instance.user %}
+			<p>Author: <a href="/u/{{ instance.user }}">{{instance.user}}</a></p>
+		{% endif %}
+		{{ instance.publish }} </br>
+		<hr/>
+		{% if instance.cover_photo %}
+			<img src="{{ instance.cover_photo.url }}" class="img-responsive">
+		{% endif %}
+		
+		<div class="content-markdown">
+{{ instance.content}}<br/>
+		</div>
+
+</div>
+</div>
+<div class="row">
+
+	<div class="col-md-8 col-md-offset-2">
+		<hr/>
+	</div>
+	<div class="social col-md-8 col-md-offset-2" style="height: 50px;">
+		<a>
+			<div class="ico col-md-1 col-md-offset-5">
+				<i class="fa fa-thumbs-up fa-fw fa-lg"></i>
+			</div>
+		</a>
+		<a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}">
+			<div class="ico col-md-1">
+				<i class="fa fa-facebook-f fa-fw fa-lg"></i>
+			</div>
+		</a>
+		<a href="https://twitter.com/home?status={{ share_string }}%20{{ instance.title | urlify }}%20{{ request.build_absolute_uri }}/">
+			<div class="ico col-md-1">
+				<i class="fa fa-twitter fa-fw fa-lg"></i>
+			</div>
+		</a>
+	</div>
+
+</div>
+{% endblock %}
+

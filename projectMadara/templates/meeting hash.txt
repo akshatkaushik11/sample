@@ -1,0 +1,35 @@
+{
+  "asset": {
+    "data": {
+      "message": "Jasmine and Hasime meet and talk, face to face, on 3rd June, 2018 about Jasmine's job and to exchange books."
+    }
+  },
+  "id": "ab936a77dae8915dddee93ecac5b40da9461a39f9b149fa4b421622acce1fa56",
+  "inputs": [
+    {
+      "fulfillment": "pGSAIA4D55HkeWEZGb0lpp4aEHNPeWyT_V3HLvwrqRq-glVzgUDkqmKispbsbV9G432qUk36Zn66lwbVASWtOOhmW0T8qLwHoAG0BUG1HJhZRYaKS7I7gmxz0eXnLGyuhDxs-M4I",
+      "fulfills": null,
+      "owners_before": [
+        "wiALa6RCvEjQy6Gx9ebDUtYRpd2V2HLMk39xhW4wFra"
+      ]
+    }
+  ],
+  "metadata": null,
+  "operation": "CREATE",
+  "outputs": [
+    {
+      "amount": "1",
+      "condition": {
+        "details": {
+          "public_key": "wiALa6RCvEjQy6Gx9ebDUtYRpd2V2HLMk39xhW4wFra",
+          "type": "ed25519-sha-256"
+        },
+        "uri": "ni:///sha-256;oEJvKY1pbZgtSWA1qjrWYoo-V8Y7h_KFKV5basAWSA4?fpt=ed25519-sha-256&cost=131072"
+      },
+      "public_keys": [
+        "wiALa6RCvEjQy6Gx9ebDUtYRpd2V2HLMk39xhW4wFra"
+      ]
+    }
+  ],
+  "version": "2.0"
+}
